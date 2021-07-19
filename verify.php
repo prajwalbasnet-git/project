@@ -2,7 +2,7 @@
 session_start();
 
 $otperr="";
-echo $_SESSION['otp'];
+
 
 
 if (isset($_POST['sb']))

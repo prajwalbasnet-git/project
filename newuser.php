@@ -9,11 +9,12 @@ $pw=$_SESSION["pw"];
 $phn=$_SESSION["phn"];
 $em=$_SESSION["em"];
 $gen=$_SESSION['gender'];
-$sql = "INSERT INTO user(Firstname,Lastname,Username,Password,Phone,Email,Gender) VALUES ('$fname','$lname','$uname','$pw','$phn','$em','$gen')";
+$pwh=password_hash($pw,PASSWORD_DEFAULT);
+$sql = "INSERT INTO user(Firstname,Lastname,Username,Password,Phone,Email,Gender) VALUES ('$fname','$lname','$uname','$pwh','$phn','$em','$gen')";
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    header("Location:index2.php");
   } else {
-    echo "Sorry the server is corr;
+    echo "Sorry the server is currently down";
   }
   
   $conn->close();
