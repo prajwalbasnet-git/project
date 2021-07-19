@@ -40,6 +40,8 @@ $result = $conn->query($sql);
                                  $_SESSION['uname']=$uname;
                                  $_SESSION['phn']=$phn;
                                  $_SESSION['em']=$em;
+                                 $_SESSION['pw']=$pw;
+                                 
                                  if ($_POST['gender']=="male")
                                     {
                                         $gen="male";        

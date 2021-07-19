@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$otperr="";
    ?>
    <!DOCTYPE html>
    <html>
@@ -13,9 +13,9 @@ session_start();
  </body>
 </html>
 <?php
-}
-$otperr="";
-echo $_SESSION['otp'];
+
+
+
 if (isset($_POST['sb']))
 {
    
@@ -31,7 +31,7 @@ if (isset($_POST['sb']))
       
        if($_POST["otp"]==$_SESSION['otp'])
        {
-          echo "verify";
+        header ("Location:newuser.php");
        }
        else
        {

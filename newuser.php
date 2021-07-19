@@ -1,31 +1,19 @@
 <?php
+session_start();
 include 'database.php';
-$fname=$_POST["fname"];
-$lname=$_POST["lname"];
-$uname=$_POST["uname"];
-$pw=$_POST["pw"];
-$pw2=$_POST["pw2"];
-$phn=$_POST["phn"];
-$em=$_POST["em"];
-if ($_POST['gender']=="male")
-{
-  $gen="male";
-}
-elseif ($_POST['gender']=="female")
-{
-  $gen="female";
-}
-else
-{
-  $gen="other";
-}
-echo $gen;
+$fname=$_SESSION["fname"];
+$lname=$_SESSION["lname"];
+$uname=$_SESSION["uname"];
+$pw=$_SESSION["pw"];
 
+$phn=$_SESSION["phn"];
+$em=$_SESSION["em"];
+$gen=$_SESSION['gender'];
 $sql = "INSERT INTO user(Firstname,Lastname,Username,Password,Phone,Email,Gender) VALUES ('$fname','$lname','$uname','$pw','$phn','$em','$gen')";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
   } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Sorry the server is corr;
   }
   
   $conn->close();

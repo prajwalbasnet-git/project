@@ -1,21 +1,10 @@
 <?php
 session_start();
 
-   ?>
-   <!DOCTYPE html>
-   <html>
-   <head>
-   <div class="alert alert-success" role="alert">
-   Verification code has been sent again.
- </div>
- </head>
- <body>
- </body>
-</html>
-<?php
-
 $otperr="";
 echo $_SESSION['otp'];
+
+
 if (isset($_POST['sb']))
 {
    
@@ -31,7 +20,7 @@ if (isset($_POST['sb']))
       
        if($_POST["otp"]==$_SESSION['otp'])
        {
-          echo "verify";
+         header ("Location:newuser.php");
        }
        else
        {
